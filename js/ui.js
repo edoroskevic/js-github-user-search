@@ -1,37 +1,15 @@
 /*
-	@author edoroskevic
-	@date 29/07/2018
+	author: edoroskevic
+	date: 29/07/2018
 */
 
 class UI{
-	/*
-		@name: UI
-		@description: a class responsible for rendering the retrieved user profile and its repositories	
-
-		@parameters
-			uiProfile: a DOM element to hold user profile information
-			uiRepository: a DOM element to hold user repository information
-
-		@methods
-			displayProfile: display user profile information
-			displayRepository: display user repository information
-			clear: clear user profile container
-			alert: alert user if no user profile could be found
-	*/
 	constructor(){
 		this.uiProfile = document.getElementById('profile');	
 		this.uiRepository = document.getElementById('repos');
 	}	
 
 	displayProfile(profile){
-		/*
-			@type: sync
-			@name: displayProfile
-			@description: display user profile information
-			@args:
-				profile - the GitHub API response containing user profile information 
-			@return: -
-		*/
 		self = this;
 		
 		self.uiProfile.innerHTML = `
@@ -60,14 +38,6 @@ class UI{
 	}
 
 	displayRepository(repository){
-		/*
-			@type: sync
-			@name: displayRepository
-			@description: display users latest repositories
-			@args:
-				repository - a GitHub API response containing latest users repositories
-			@return: -
-		*/
 		self = this;
 		
 		let output = '';
@@ -94,13 +64,6 @@ class UI{
 	}
 	
 	clear(){
-		/*
-			@type: sync
-			@name: clear
-			@description: clear user profile and repository container
-			@args: -
-			@return: -
-		*/
 		self = this;
 		
 		self.uiProfile.innerHTML = '';	
@@ -108,13 +71,6 @@ class UI{
 	}
 
 	alert(){
-		/*
-			@type: sync
-			@name: alert
-			@description: alert user if no user profile could be found
-			@args: -
-			@return: -
-		*/
 		const instance = document.querySelector('.alert');
 
 		if(instance === null){
